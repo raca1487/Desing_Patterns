@@ -12,13 +12,13 @@ La solución tiene dos pasos a seguir comunes:
 
 ### FACTORY METHOD
 Patrón de **diseño creacional** que proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.
-Dicho de otro modo, se trata de efinir una *interface* para crear un objeto, dejando a las subclases decidir de que tipo de clase se realizará la instancia en tiempo de ejecución.
+Dicho de otro modo, se trata de definir una *interface* para crear un objeto, dejando a las subclases decidir de que tipo de clase se realizará la instancia en tiempo de ejecución.
 
 La solución sugiere que, en lugar de llamar al operador `new` (reducir su uso) para construir objetos directamente, se invoque a un método fábrica especial.
 
 ![Factory](https://github.com/raca1487/Desing_Patterns/wiki/img/factory_pattern.PNG)
 
-### ABSTRACT METHOD
+### ABSTRACT FACTORY
 Patrón de **diseño creacional** que nos permite producir familias de objetos relacionados sin especificar sus clases concretas.
 Funcionan en torno a una superfábrica que crea otras fábricas.
 
@@ -71,3 +71,47 @@ Patrón de **diseño estructural** que te permite dividir una clase grande, o un
 Este patrón involucra una interfaz que actúa como un puente que hace que la funcionalidad de las clases concretas sea independiente de las clases del implementador de la interfaz. Ambos tipos de clases se pueden alterar estructuralmente sin afectarse entre sí.
 
 ![Bridge](https://github.com/raca1487/Desing_Patterns/wiki/img/bridge_pattern.PNG)
+
+
+## PATRONES DE COMPORTAMIENTO
+
+### SERVANT
+
+### NULL OBJECT
+Patrón de **diseño de comportamiento** que nace de la necesidad de evitar los valores nulos que puedan originar error en tiempo de ejecución. Básicamente lo que este patrón propone es utilizar instancias que implementen la interface requerida pero con un cuerpo vacío en lugar de regresar un valor null.
+
+Vamos a crear una clase abstracta *AbstractCustomer* que defina operaciones, clases concretas que la implementen y una clase de fábrica *CustomerFactory* para devolver objetos *RealCustomer* o *NullCustomer* en función del nombre del cliente que se le pase.
+
+![Null Object](https://github.com/raca1487/Desing_Patterns/wiki/img/nullobject_pattern.PNG)
+
+
+### OBSERVER
+Patrón de **diseño de comportamiento** que permite definir un mecanismo de suscripción para notificar a varios objetos sobre cualquier evento que le suceda al objeto que están observando.
+
+Se utiliza cuando existe una relación *OneToMany* entre los objetos, de manera que si se modifica un objeto, sus objetos dependientes se notificarán automáticamente.
+
+![Observer](https://github.com/raca1487/Desing_Patterns/wiki/img/observer_pattern.PNG)
+
+
+### COMMAND
+Patrón de **diseño de comportamiento** que convierte una solicitud en un objeto independiente que contiene toda la información sobre la solicitud. Esta transformación permite parametrizar los métodos con diferentes solicitudes, retrasar o poner en cola la ejecución de una solicitud y soportar operaciones que no se pueden realizar.
+
+![Command](https://github.com/raca1487/Desing_Patterns/wiki/img/command_pattern.PNG)
+
+
+### TEMPLATE METHOD
+Patrón de **diseño de comportamiento** que define el esqueleto de un algoritmo en la superclase pero permite que las subclases sobrescriban pasos del algoritmo sin cambiar su estructura.
+
+Este patrón sugiere:
+* Dividir un algoritmo en una serie de pasos.
+* Convertir estos pasos en métodos.
+* Colocar una serie de llamadas a esos métodos dentro de un único método plantilla `template()`.
+
+* Los pasos pueden ser abstractos, o contar con una implementación por defecto.
+> Para utilizar el algoritmo, el cliente debe aportar su propia subclase, implementar todos los pasos abstractos y sobrescribir algunos de los opcionales si es necesario (pero no el propio método `template()`).
+
+![Template](https://github.com/raca1487/Desing_Patterns/wiki/img/template_pattern.PNG)
+
+
+### CHAIN OF RESPONSIBILITY
+Patrón de **diseño de comportamiento** que permite pasar solicitudes a lo largo de una cadena de manejadores. Al recibir una solicitud, cada manejador decide si la procesa o si la pasa al siguiente manejador de la cadena.
