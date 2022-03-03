@@ -1,117 +1,21 @@
 # PATRONES DE DISEÑO
 
-## PATRONES CREACIONALES
+## 1. [PATRONES CREACIONALES](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_CREACIONALES)
+### 1.1 [SINGLETON](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_CREACIONALES#singleton)
+### 1.2 [FACTORY METHOD](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_CREACIONALES#factory-method)
+### 1.3 [ABSTRACT FACTORY](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_CREACIONALES#abstract-method)
 
-### SINGLETON
-Patrón de **diseño creacional** que nos permite asegurarnos de que una clase tenga una única instancia, a la vez que proporciona un punto de acceso global a dicha instancia.
+## 2. [PATRONES ESTRUCTURALES](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_ESTRUCTURALES)
+### 2.1 [ADAPTER](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_ESTRUCTURALES/#adapter)
+### 2.2 [FACADE](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_ESTRUCTURALES/#facade)
+### 2.3 [DECORATOR](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_ESTRUCTURALES/#decorator)
+### 2.4 [PROXY](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_ESTRUCTURALES/#proxy)
+### 2.5 [BRIDGE](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_ESTRUCTURALES/#bridge)
 
-La solución tiene dos pasos a seguir comunes:
-* Hacer privado el constructor por defecto para evitar que otros objetos utilicen el operador `new` con la clase Singleton.
-* Crear un método de creación estático que actúe como constructor.
-> Tras bambalinas, este método invoca al constructor privado para crear un objeto y lo guarda en un campo estático. Las siguientes llamadas a este método devuelven el objeto almacenado en caché.
-
-### FACTORY METHOD
-Patrón de **diseño creacional** que proporciona una interfaz para crear objetos en una superclase, mientras permite a las subclases alterar el tipo de objetos que se crearán.
-Dicho de otro modo, se trata de definir una *interface* para crear un objeto, dejando a las subclases decidir de que tipo de clase se realizará la instancia en tiempo de ejecución.
-
-La solución sugiere que, en lugar de llamar al operador `new` (reducir su uso) para construir objetos directamente, se invoque a un método fábrica especial.
-
-![Factory](https://github.com/raca1487/Desing_Patterns/wiki/img/factory_pattern.PNG)
-
-### ABSTRACT FACTORY
-Patrón de **diseño creacional** que nos permite producir familias de objetos relacionados sin especificar sus clases concretas.
-Funcionan en torno a una superfábrica que crea otras fábricas.
-
-La solución que sugiere el patrón ***Abstract Factory*** es:
-* Declarar de forma explícita interfaces para cada producto diferente de la familia de productos.
-* Declarar la *Fábrica abstracta* (una interfaz con una lista de métodos de creación para todos los productos que son parte de la familia de productos).
-
-![Abstract Factory](https://github.com/raca1487/Desing_Patterns/wiki/img/abstract_pattern.PNG)
-
-
-## PATRONES ESTRUCTURALES
-
-### ADAPTER
-Patrón de **diseño estructural** que permite la colaboración entre objetos con interfaces incompatibles.
-Este patrón involucra una sola clase que es responsable de unir funcionalidades de interfaces independientes o incompatibles.
-
-Los adaptadores no solo convierten datos a varios formatos, sino que también ayudan a objetos con distintas interfaces a colaborar. Funciona así:
-* El adaptador obtiene una interfaz compatible con uno de los objetos existentes.
-* Utilizando esta interfaz, el objeto existente puede invocar con seguridad los métodos del adaptador.
-* Al recibir una llamada, el adaptador pasa la solicitud al segundo objeto, pero en un formato y orden que ese segundo objeto espera.
-
-![Adapter](https://github.com/raca1487/Desing_Patterns/wiki/img/adapter_pattern.PNG)
-
-### FACADE
-Patrón de **diseño estructural** que proporciona una interfaz simplificada a una biblioteca, un framework o cualquier otro grupo complejo de clases. Este patrón oculta las complejidades del sistema y proporciona una interfaz para el cliente mediante la cual el cliente puede acceder al sistema.
-
-Una fachada es una clase que proporciona una interfaz simple a un subsistema complejo que contiene muchas partes móviles. Puede proporcionar una funcionalidad limitada en comparación con trabajar directamente con el subsistema. Sin embargo, tan solo incluye las funciones realmente importantes para los clientes.
-
-> Tener una fachada resulta útil cuando tienes que integrar tu aplicación con una biblioteca sofisticada con decenas de funciones, de la cual sólo necesitas una pequeña parte.
-
-![Facade](https://github.com/raca1487/Desing_Patterns/wiki/img/facade_pattern.PNG)
-
-### DECORATOR
-Patrón de **diseño estructural** que te permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales que contienen estas funcionalidades.
-
-Este patrón crea una clase de decorador que envuelve la clase original y proporciona una funcionalidad adicional que mantiene intacta la firma de los métodos de clase.
-
-![Decorator](https://github.com/raca1487/Desing_Patterns/wiki/img/decorator_pattern.PNG)
-
-### PROXY
-Patrón de **diseño estructural** que permite proporcionar un sustituto o marcador de posición para otro objeto. Un proxy controla el acceso al objeto original, permitiendo hacer algo antes o después de que la solicitud llegue al objeto original.
-
-En este patrón, una clase representa la funcionalidad de otra clase, es decir, se crea un objeto que tiene un objeto original para interconectar su funcionalidad con el mundo exterior.
-
-![Proxy](https://github.com/raca1487/Desing_Patterns/wiki/img/proxy_pattern.PNG)
-
-### BRIDGE
-Patrón de **diseño estructural** que te permite dividir una clase grande, o un grupo de clases estrechamente relacionadas, en dos jerarquías separadas (abstracción e implementación) que pueden desarrollarse independientemente la una de la otra.
-
-Este patrón involucra una interfaz que actúa como un puente que hace que la funcionalidad de las clases concretas sea independiente de las clases del implementador de la interfaz. Ambos tipos de clases se pueden alterar estructuralmente sin afectarse entre sí.
-
-![Bridge](https://github.com/raca1487/Desing_Patterns/wiki/img/bridge_pattern.PNG)
-
-
-## PATRONES DE COMPORTAMIENTO
-
-### SERVANT
-
-### NULL OBJECT
-Patrón de **diseño de comportamiento** que nace de la necesidad de evitar los valores nulos que puedan originar error en tiempo de ejecución. Básicamente lo que este patrón propone es utilizar instancias que implementen la interface requerida pero con un cuerpo vacío en lugar de regresar un valor null.
-
-Vamos a crear una clase abstracta *AbstractCustomer* que defina operaciones, clases concretas que la implementen y una clase de fábrica *CustomerFactory* para devolver objetos *RealCustomer* o *NullCustomer* en función del nombre del cliente que se le pase.
-
-![Null Object](https://github.com/raca1487/Desing_Patterns/wiki/img/nullobject_pattern.PNG)
-
-
-### OBSERVER
-Patrón de **diseño de comportamiento** que permite definir un mecanismo de suscripción para notificar a varios objetos sobre cualquier evento que le suceda al objeto que están observando.
-
-Se utiliza cuando existe una relación *OneToMany* entre los objetos, de manera que si se modifica un objeto, sus objetos dependientes se notificarán automáticamente.
-
-![Observer](https://github.com/raca1487/Desing_Patterns/wiki/img/observer_pattern.PNG)
-
-
-### COMMAND
-Patrón de **diseño de comportamiento** que convierte una solicitud en un objeto independiente que contiene toda la información sobre la solicitud. Esta transformación permite parametrizar los métodos con diferentes solicitudes, retrasar o poner en cola la ejecución de una solicitud y soportar operaciones que no se pueden realizar.
-
-![Command](https://github.com/raca1487/Desing_Patterns/wiki/img/command_pattern.PNG)
-
-
-### TEMPLATE METHOD
-Patrón de **diseño de comportamiento** que define el esqueleto de un algoritmo en la superclase pero permite que las subclases sobrescriban pasos del algoritmo sin cambiar su estructura.
-
-Este patrón sugiere:
-* Dividir un algoritmo en una serie de pasos.
-* Convertir estos pasos en métodos.
-* Colocar una serie de llamadas a esos métodos dentro de un único método plantilla `template()`.
-
-* Los pasos pueden ser abstractos, o contar con una implementación por defecto.
-> Para utilizar el algoritmo, el cliente debe aportar su propia subclase, implementar todos los pasos abstractos y sobrescribir algunos de los opcionales si es necesario (pero no el propio método `template()`).
-
-![Template](https://github.com/raca1487/Desing_Patterns/wiki/img/template_pattern.PNG)
-
-
-### CHAIN OF RESPONSIBILITY
-Patrón de **diseño de comportamiento** que permite pasar solicitudes a lo largo de una cadena de manejadores. Al recibir una solicitud, cada manejador decide si la procesa o si la pasa al siguiente manejador de la cadena.
+## 3. [PATRONES DE COMPORTAMIENTO](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO)
+### 3.1 SERVANT
+### 3.2 [NULL OBJECT](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO/#null-object)
+### 3.3 [OBSERVER](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO/#observer)
+### 3.4 [COMMAND](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO/#command)
+### 3.5 [TEMPLATE METHOD](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO/#template-method)
+### 3.6 [CHAIN OF RESPONSIBILITY](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO/#chain-of-responsibility)
