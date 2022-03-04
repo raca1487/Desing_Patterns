@@ -19,3 +19,4 @@
 ### 3.4 [COMMAND](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO#command)
 ### 3.5 [TEMPLATE METHOD](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO#template-method)
 ### 3.6 [CHAIN OF RESPONSIBILITY](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO#chain-of-responsibility)
+### 3.7 [ACTIVE OBJECT](https://github.com/raca1487/Desing_Patterns/wiki/PATRONES_COMPORTAMIENTO#active-object)
